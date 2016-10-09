@@ -10,6 +10,7 @@ import {ArrayJoinPipe} from "./array-join.pipe";
         ArrayJoinPipe
     ],
     imports: [],
-    providers: [],
+    providers: [
+    ],
 })
 export class CommonModule{}

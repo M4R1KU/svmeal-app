@@ -6,7 +6,8 @@ import {MealDetailComponent} from "./meal-detail/meal-detail.component";
 import {MealService} from "./services/meal.service";
 import {CommonModule as AppCommonModule} from '../common/common.module';
 
-import {MdCardModule, MdGridListModule} from "@angular/material";
+import {MdCardModule, MdGridListModule, MaterialModule} from "@angular/material";
+import {DayOffsetService} from "./services/dayoffset.service";
 
 @NgModule({
     declarations: [
@@ -19,11 +20,13 @@ import {MdCardModule, MdGridListModule} from "@angular/material";
     imports: [
         CommonModule,
         AppCommonModule,
+        MaterialModule.forRoot(),
         MdCardModule.forRoot(),
         MdGridListModule.forRoot()
     ],
     providers: [
-        MealService
+        MealService,
+        DayOffsetService
     ]
 })
 export class MealModule{}

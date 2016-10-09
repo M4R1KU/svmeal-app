@@ -1,3 +1,27 @@
 <div class="row">
+    {{ currentDay }}
+    <h1>Angebot vom {{ date }}</h1>
+    <div class="row valign-wrapper">
+        <div class="col s4 valign">
+            <button [disabled]="!isValidDay(currentDay-1)" class="btn waves-effect left color-accent" (click)="previousDay()">
+                <i class="material-icons left">navigate_before</i>
+                Previous Day
+            </button>
+        </div>
+        <div class="col s4">
+            <div class="input-field col s12">
+                <select (change)="setDay($event.target.value)">
+                    <option *ngFor="let day of days" value="day.day">{{ day.name }}</option>
+                </select>
+                <label>Choose Day</label>
+            </div>
+        </div>
+        <div class="col s4 valign">
+            <button [disabled]="!isValidDay(currentDay+1)" class="btn waves-effect right color-accent" (click)="nextDay()"><i
+                class="material-icons right">navigate_next</i>
+                Next Day
+            </button>
+        </div>
+    </div>
     <meal-detail [meal]="meal" *ngFor="let meal of meals" class="col s4 margin-box"></meal-detail>
 </div>

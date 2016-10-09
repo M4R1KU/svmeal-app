@@ -3,9 +3,23 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
+import {
+    AngularFireModule,
+    AuthMethods,
+    AuthProviders
+} from "angularfire2";
 
 import {AppComponent} from './app.component';
 import {MealModule} from "./meal/meal.module";
+import {UserService} from "./auth/user.service";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCEuDOT4nBFFCNKIyclxhZ4yUvxi_E39Xc",
+    authDomain: "svmeal-app.firebaseapp.com",
+    databaseURL: "https://svmeal-app.firebaseio.com",
+    storageBucket: "svmeal-app.appspot.com",
+    messagingSenderId: "608875430166"
+};
 
 @NgModule({
     declarations: [
@@ -16,9 +30,13 @@ import {MealModule} from "./meal/meal.module";
         FormsModule,
         HttpModule,
         MealModule,
-        MaterialModule.forRoot()
+        MaterialModule.forRoot(),
+        AngularFireModule.initializeApp(firebaseConfig,{
+            provider: AuthProviders.Google,
+            method: AuthMethods.Popup
+        })
     ],
-    providers: [],
+    providers: [UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

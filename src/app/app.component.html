@@ -1,5 +1,8 @@
 <md-toolbar color="primary">
     <span>{{ title }}</span>
+    <span class="toolbar-fill-space"></span>
+    <md-icon *ngIf="!userService.isLoggedIn()" (click)="login()" md-tooltip="Login" tooltip-position="below">person</md-icon>
+   <md-icon *ngIf="userService.isLoggedIn()" (click)="logout()" md-tooltip="Logout" tooltip-position="below">power_settings_new</md-icon>
 </md-toolbar>
 <div class="container">
     <meal-list>
