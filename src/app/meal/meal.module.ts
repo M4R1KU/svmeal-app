@@ -8,6 +8,8 @@ import {CommonModule as AppCommonModule} from '../common/common.module';
 
 import {MdCardModule, MdGridListModule, MaterialModule} from "@angular/material";
 import {DayOffsetService} from "./services/dayoffset.service";
+import {FormsModule} from "@angular/forms";
+import {MaterializeModule} from "angular2-materialize";
 
 @NgModule({
     declarations: [
@@ -18,11 +20,13 @@ import {DayOffsetService} from "./services/dayoffset.service";
         MealListComponent
     ],
     imports: [
+        FormsModule,
         CommonModule,
         AppCommonModule,
         MaterialModule.forRoot(),
         MdCardModule.forRoot(),
-        MdGridListModule.forRoot()
+        MdGridListModule.forRoot(),
+        MaterializeModule
     ],
     providers: [
         MealService,
