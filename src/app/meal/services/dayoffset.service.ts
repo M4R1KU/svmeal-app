@@ -5,6 +5,7 @@ import {DayOfWeek} from "./day-of-week.enum";
 export class DayOffsetService {
 
     private _today: DayOfWeek;
+    private _currentOffset: number = 0;
     private _maxOffset: number;
     private _minOffset: number;
 
@@ -32,13 +33,24 @@ export class DayOffsetService {
         return days;
     }
 
-    public calculateOffSet(day: DayOfWeek) {
-        let offset = day - this._today;
-        return this.isValidOffset(offset) ? offset : null;
+    public calculateOffset(day: DayOfWeek) {
+        return day - this._today;
+    }
+
+    public calculateAndSetCurrentOffset(day: DayOfWeek) {
+        let offset = this.calculateOffset(day);
+        if (this.isValidOffset(offset)) {
+            this._currentOffset = offset;
+        }
+        return this._currentOffset;
     }
 
     public isValidOffset(offset: number) {
         return offset >= this._minOffset && this._maxOffset >= offset;
+    }
+
+    public isValidDay(day: DayOfWeek) {
+        return this.isValidOffset(this.calculateOffset(day));
     }
 
 
@@ -63,46 +75,7 @@ export class DayOffsetService {
         return this._today;
     }
 
-    /*private currentOffset: number = 0;
-    private possibleDays: number[];
-
-    constructor() {
-        this.possibleDays = this.calculatePossibleDays(this.getToday());
+    get currentOffset(): number {
+        return this._currentOffset;
     }
-
-    private calculatePossibleDays(day) {
-        let days: number[] = [];
-        if (day === DayOfWeek.Saturday) return null;
-        if (day === DayOfWeek.Sunday) day = DayOfWeek.Monday;
-
-        for (let i = day; i <= DayOfWeek.Friday; i++) {
-            days.push(i);
-        }
-        return days;
-
-    }
-
-    public getToday() {
-        return new Date().getDay();
-    }
-
-    public calculateOffset(day: number) {
-        return day - this.getToday();
-    }
-
-    public getPossibleDays() {
-        return this.possibleDays;
-    }
-
-    public getPossibleDaysWithNames() {
-        let result = [];
-        for (let day of this.possibleDays) {
-            result.push({name: DayOfWeek[day], day: day});
-        }
-        return result;
-    }
-
-    public getCurrentOffset() {
-        return this.currentOffset;
-    }*/
 }

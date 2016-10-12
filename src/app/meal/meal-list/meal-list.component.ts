@@ -24,7 +24,7 @@ export class MealListComponent implements OnInit {
     ngOnInit() {
         if (this._dayOffsetService.today !== DayOfWeek.Saturday) {
             this._days = this._dayOffsetService.getValidDays();
-            this.setMealPlan("bit", this._dayOffsetService.calculateOffSet(this._currentDay));
+            this.setMealPlan("bit", this._dayOffsetService.calculateAndSetCurrentOffset(this._currentDay));
         } else {
             //do something
         }
@@ -40,11 +40,11 @@ export class MealListComponent implements OnInit {
 
     updateDay(value) {
         this._currentDay = value;
-        this.setMealPlan("bit", this._dayOffsetService.calculateOffSet(this._currentDay));
+        this.setMealPlan("bit", this._dayOffsetService.calculateAndSetCurrentOffset(this._currentDay));
     }
 
-    isValidDay(day: number) {
-        return this._dayOffsetService.calculateOffSet(day) !== null;
+    isValidOffset(offset: number) {
+        return this._dayOffsetService.isValidOffset(offset);
     }
 
 
@@ -54,12 +54,6 @@ export class MealListComponent implements OnInit {
             .subscribe(mealPlan => {
                 this._meals = mealPlan.offers;
                 this._date = mealPlan.date;
-                //this.firebaseSync();
             });
     }
-
-    private firebaseSync() {
-
-    }
-
 }
