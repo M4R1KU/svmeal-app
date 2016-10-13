@@ -12,6 +12,7 @@ import {
 import {AppComponent} from './app.component';
 import {MealModule} from "./meal/meal.module";
 import {UserService} from "./auth/user.service";
+import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEuDOT4nBFFCNKIyclxhZ4yUvxi_E39Xc",
@@ -23,7 +24,8 @@ const firebaseConfig = {
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        RestaurantDetailComponent
     ],
     imports: [
         BrowserModule,
