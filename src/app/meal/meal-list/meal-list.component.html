@@ -2,7 +2,7 @@
     <h1>Angebot vom {{ _date }}</h1>
     <div class="row valign-wrapper">
         <div class="col s4 valign">
-            <button [disabled]="!isValidDay(_currentDay-1)" class="btn waves-effect left color-accent" (click)="previousDay()">
+            <button [disabled]="!isValidOffset(_dayOffsetService.currentOffset-1)" class="btn waves-effect left color-accent" (click)="previousDay()">
                 <i class="material-icons left">navigate_before</i>
                 Previous Day
             </button>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="col s4 valign">
-            <button [disabled]="!isValidDay (_currentDay+1)" class="btn waves-effect right color-accent" (click)="nextDay()"><i
+            <button [disabled]="!isValidOffset(_dayOffsetService.currentOffset+1)" class="btn waves-effect right color-accent" (click)="nextDay()"><i
                 class="material-icons right">navigate_next</i>
                 Next Day
             </button>
