@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {ArrayJoinPipe} from "./array-join.pipe";
+import {ArrayJoinPipe} from "./pipes/array-join.pipe";
 
 @NgModule({
     declarations: [
@@ -13,4 +13,4 @@ import {ArrayJoinPipe} from "./array-join.pipe";
     providers: [
     ],
 })
-export class CommonModule{}
+export class SharedModule{}

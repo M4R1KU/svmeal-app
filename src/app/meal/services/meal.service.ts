@@ -1,5 +1,4 @@
 import {Http} from "@angular/http";
-import {Meal} from "../Meal";
 import {Injectable} from "@angular/core";
 
 import {Observable} from "rxjs";

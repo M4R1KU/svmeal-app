@@ -5,7 +5,6 @@ import {UserService} from "../../auth/user.service";
 import {AngularFire} from "angularfire2";
 import {DayOfWeek} from "../services/day-of-week.enum";
 import {DayOffsetService} from "../services/dayoffset.service";
-import * as _ from "underscore";
 
 @Component({
     selector: 'meal-list',

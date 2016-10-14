@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {UserService} from "./auth/user.service";
+import {Config} from "./config/Config";
 
 @Component({
     selector: 'app-root',
@@ -9,7 +10,7 @@ import {UserService} from "./auth/user.service";
 export class AppComponent {
     title = 'svmeal-app';
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private _config: Config) {
     }
 
     login() {
