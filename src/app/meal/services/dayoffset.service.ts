@@ -16,7 +16,7 @@ export class DayOffsetService {
 
     private _calculateMinMaxOffset() {
         if (this._today == DayOfWeek.Saturday) {
-            this._minOffset = this._maxOffset = -1;
+            this._minOffset = this._maxOffset = 0;
         } else {
             this._minOffset = 0;
             this._maxOffset = (this._today == DayOfWeek.Sunday) ? 4 : 5 - this._today;

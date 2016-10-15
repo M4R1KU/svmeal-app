@@ -12,9 +12,10 @@ import {DayOffsetService} from "../services/dayoffset.service";
     styleUrls: ['meal-list.component.css']
 })
 export class MealListComponent implements OnInit {
-    private _meals: Meal[];
+    private _meals: Meal[] = null;
     private _date: Date;
     private _currentDay: number = this._dayOffsetService.today;
+    private _dayOfWeek = DayOfWeek;
     private _days: any[];
 
     constructor(private _mealService: MealService, private userService: UserService, private af: AngularFire, private _dayOffsetService: DayOffsetService) {
@@ -24,8 +25,6 @@ export class MealListComponent implements OnInit {
         if (this._dayOffsetService.today !== DayOfWeek.Saturday) {
             this._days = this._dayOffsetService.getValidDays();
             this.setMealPlan("bit", this._dayOffsetService.calculateAndSetCurrentOffset(this._currentDay));
-        } else {
-            //do something
         }
     }
 
@@ -53,6 +52,7 @@ export class MealListComponent implements OnInit {
             .subscribe(mealPlan => {
                 this._meals = mealPlan.offers;
                 this._date = mealPlan.date;
+                console.log(this._meals);
             });
     }
 }

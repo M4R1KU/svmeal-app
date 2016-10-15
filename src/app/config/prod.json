@@ -1,3 +1,6 @@
 {
-    "api": "abcdefg"
+    "api": {
+        "apiBase": "http://svmeal-api.jmnw.me/",
+        "context": "api"
+    }
 }

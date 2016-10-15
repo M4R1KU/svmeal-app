@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {environment} from "../../environments/environment";
-import {Observable} from "rxjs";
 
 @Injectable()
 export class Config {
@@ -27,8 +26,12 @@ export class Config {
         return this._env[key];
     }
 
-    get(key: any) {
-        'fkdjfsdf.fdfd.fdfdf.df'
-        return this._config[key];
+    get(key: string) {
+        if (key.indexOf('.') == -1) {
+            return this._config[key];
+        } else {
+            let firstKey = key.split('.')[0];
+            return this.get(firstKey);
+        }
     }
 }
