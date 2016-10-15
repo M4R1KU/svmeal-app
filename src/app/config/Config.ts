@@ -13,7 +13,7 @@ export class Config {
 
     load() {
         return new Promise((resolve) => {
-            this._http.get(`app/config/${this._env['envName']}.json`)
+            this._http.get(`assets/config/${this._env['envName']}.json`)
                 .map(res => res.json())
                 .subscribe(config => {
                     this._config = config;

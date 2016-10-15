@@ -1,4 +1,12 @@
-# SvmealApp
+# svmeal-app
+
+Shows the meals from the [sv-group](http://www.sv-group.ch/de/) restaurant in switzerland.
+
+This app was build to get to know Angular 2 better. So there may be some architecture or other mistakes.
+
+[Demo](https://svmeal-app.firebaseapp.com)
+
+# Angular CLI Instructions
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
