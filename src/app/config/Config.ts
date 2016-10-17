@@ -26,12 +26,14 @@ export class Config {
         return this._env[key];
     }
 
-    get(key: string) {
+    get(key: string, obj: Object = this._config) {
         if (key.indexOf('.') == -1) {
-            return this._config[key];
+            return obj[key];
         } else {
-            let firstKey = key.split('.')[0];
-            return this.get(firstKey);
+            let keys = key.split('.');
+            let firstKey = keys[0];
+            let nextKey = keys[1];
+            return this.get(nextKey, obj[firstKey]);
         }
     }
 }

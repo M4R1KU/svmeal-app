@@ -52,7 +52,6 @@ export class MealListComponent implements OnInit {
             .subscribe(mealPlan => {
                 this._meals = mealPlan.offers;
                 this._date = mealPlan.date;
-                console.log(this._meals);
             });
     }
 }

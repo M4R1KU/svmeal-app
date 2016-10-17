@@ -9,6 +9,10 @@ import {Config} from "./config/Config";
 })
 export class AppComponent {
     title = 'svmeal-app';
+    private options = { // options for simple-notifications
+        timeOut: 10000,
+        animate: 'fromRight'
+    };
 
     constructor(private userService: UserService, private _config: Config) {
     }

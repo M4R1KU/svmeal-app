@@ -14,6 +14,7 @@ import {MealModule} from "./meal/meal.module";
 import {UserService} from "./auth/user.service";
 import {RestaurantDetailComponent} from './restaurant/restaurant-detail/restaurant-detail.component';
 import {Config} from "./config/Config";
+import {SimpleNotificationsModule} from "angular2-notifications";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCEuDOT4nBFFCNKIyclxhZ4yUvxi_E39Xc",
@@ -37,7 +38,8 @@ const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig, {
             provider: AuthProviders.Google,
             method: AuthMethods.Popup
-        })
+        }),
+        SimpleNotificationsModule
     ],
     providers: [
         UserService,

@@ -1,6 +1,6 @@
 {
     "api": {
-        "apiBase": "http://svmeal-api.jmnw.me/",
+        "apiBase": "https://svmeal-api.jmnw.me/",
         "context": "api"
     }
 }
