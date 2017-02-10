@@ -6,7 +6,7 @@ import {MealDetailComponent} from "./meal-detail/meal-detail.component";
 import {MealService} from "./services/meal.service";
 import {SharedModule} from '../shared/shared.module';
 
-import {MdCardModule, MdGridListModule, MaterialModule} from "@angular/material";
+import {MaterialModule} from "@angular/material";
 import {DayOffsetService} from "./services/dayoffset.service";
 import {FormsModule} from "@angular/forms";
 import {MaterializeModule} from "angular2-materialize";
@@ -23,10 +23,7 @@ import {MaterializeModule} from "angular2-materialize";
         FormsModule,
         CommonModule,
         SharedModule,
-        MaterialModule.forRoot(),
-        MdCardModule.forRoot(),
-        MdGridListModule.forRoot(),
-        MaterializeModule
+        MaterialModule.forRoot()
     ],
     providers: [
         MealService,

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MealService} from "../services/meal.service";
 import {Meal} from "../Meal";
 import {UserService} from "../../auth/user.service";
-import {AngularFire} from "angularfire2";
 import {DayOfWeek} from "../services/day-of-week.enum";
 import {DayOffsetService} from "../services/dayoffset.service";
 
@@ -18,7 +17,7 @@ export class MealListComponent implements OnInit {
     private _dayOfWeek = DayOfWeek;
     private _days: any[];
 
-    constructor(private _mealService: MealService, private userService: UserService, private af: AngularFire, private _dayOffsetService: DayOffsetService) {
+    constructor(private _mealService: MealService, private _dayOffsetService: DayOffsetService) {
     }
 
     ngOnInit() {

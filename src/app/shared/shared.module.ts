@@ -1,9 +1,7 @@
 import {NgModule} from '@angular/core';
-
 import {ArrayJoinPipe} from "./pipes/array-join.pipe";
-import {HttpInterceptor} from "./HttpInterceptor";
-import {Http, XHRBackend, RequestOptions, HttpModule} from "@angular/http";
-import {NotificationsService, SimpleNotificationsModule} from "angular2-notifications";
+import {SimpleNotificationsModule} from "angular2-notifications";
+import {HttpInterceptor} from "./http/HttpInterceptor";
 
 @NgModule({
     declarations: [
@@ -13,15 +11,10 @@ import {NotificationsService, SimpleNotificationsModule} from "angular2-notifica
         ArrayJoinPipe
     ],
     imports: [
-        HttpModule,
         SimpleNotificationsModule
     ],
     providers: [
-        {
-            provide: Http,
-            useFactory: (backend: XHRBackend, defaultOptions: RequestOptions, notificationsService: NotificationsService) => new HttpInterceptor(backend, defaultOptions, notificationsService),
-            deps: [XHRBackend, RequestOptions, NotificationsService]
-        }
+        HttpInterceptor
     ],
 })
 export class SharedModule{}
