@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MealService} from "../services/meal.service";
 import {Meal} from "../Meal";
-import {UserService} from "../../auth/user.service";
 import {DayOfWeek} from "../services/day-of-week.enum";
 import {DayOffsetService} from "../services/dayoffset.service";
 
