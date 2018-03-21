@@ -33,6 +33,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/cdk@^5.2.0":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.2.4.tgz#c0a429a8710d8fedb157f546e21cb49d4335f7f7"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@~1.7.3":
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.7.3.tgz#ac917b69240bb1b340421e9f985135890e0d53b4"
@@ -140,6 +146,12 @@
 "@angular/language-service@^5.2.0":
   version "5.2.9"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.2.9.tgz#4838bb6319c99e8f5beb08bdfb392ee9a1173766"
+
+"@angular/material@^5.2.0":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-5.2.4.tgz#9e823798324283d23ea839156fac5bcb73443d55"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@^5.2.0":
   version "5.2.9"
@@ -6503,6 +6515,10 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typeface-montserrat@^0.0.45:
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.45.tgz#17bd9a48d1b4a3ed7f3110db8e18ea828e88594b"
+
 typescript@~2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
@@ -6751,6 +6767,10 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.3.tgz#c1d8d149316d3ea852848895cb6a0bfe887b87df"
   dependencies:
     minimalistic-assert "^1.0.0"
+
+web-animations-js@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/web-animations-js/-/web-animations-js-2.3.1.tgz#3a6d9bc15196377a90f8e2803fa5262165b04510"
 
 webdriver-js-extender@^1.0.0:
   version "1.0.0"
