@@ -1,0 +1,19 @@
+<form [formGroup]="searchForm">
+    <mat-form-field>
+        <input matInput
+               formControlName="search"
+               placeholder="Search restaurant"
+               autocomplete="off">
+        <mat-hint>Showing {{ (restaurants$ | async)?.length }} of {{ restaurantCount }}</mat-hint>
+    </mat-form-field>
+</form>
+
+<mat-nav-list>
+    <a *ngFor="let restaurant of restaurants$ | async"
+       [routerLink]="'/restaurant/' + restaurant.shortcut"
+       mat-list-item>
+        <span>{{ restaurant.name }}</span>
+        <mat-icon class="right">chevron_right</mat-icon>
+    </a>
+</mat-nav-list>
+

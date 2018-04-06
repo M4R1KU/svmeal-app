@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.app-wrapper {
+    > *:not(router-outlet) {
+        overflow-y: scroll;
+    }
+}

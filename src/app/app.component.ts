@@ -1,10 +1,15 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
+import {routeAnimations} from './common/animations';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
-    selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"]
+    selector: 'sv-app',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    animations: [routeAnimations]
 })
 export class AppComponent {
-    title = "app";
+    public getState(outlet: RouterOutlet) {
+        return outlet.activatedRouteData.animation;
+    }
 }

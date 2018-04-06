@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    padding: 8px;
+}
+
+mat-list-item ::ng-deep .mat-list-item-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-form-field {
+    width: 100%;
+}
